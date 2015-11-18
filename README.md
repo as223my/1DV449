@@ -12,7 +12,7 @@ Facebook vann även 2009 ett rättsfall om upphovsrätt mot en känd webb skrapa
 
 Närmare i tiden så stämde qvc (tv-nätverk), resultly som var en nystartad shopping app för överdrivet skrapande.
 Resultly hade även gjort det svårt att blocka deras webbskrapor vilket resulterade i att qvcs servrar blev överbelastade.
-Rätten dömde dock att qvcs motiv inte var att göra uppsiktlig skada. 
+Rätten dömde dock att resultlys motiv inte var att göra uppsiktlig skada. 
 
 ###Finns det några riktlinjer för utvecklare att tänka på om man vill vara "en god skrapare" mot serverägarna?
 
