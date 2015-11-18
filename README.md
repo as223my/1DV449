@@ -21,6 +21,13 @@ Givetvis ska man även kolla upp om det är okej att skrapa från webbsidan elle
 
 ###Begränsningar i din lösning- vad är generellt och vad är inte generellt i din kod?
 
+Jag har försökt att skriva min kod så generellt som möjligt. Start adressen är inte på något sätt statisk utan den läses av när den skickats in. Jag har också gjort så att min kod klarar av om det är mer än en dag som alla personer är lediga på eller om det inte finns någon alls. 
+Detta tog en stund att lista ut hur jag skulle ändra i min kod då jag från början bara hade räknat med att det bara fanns en dag som passade alla. Det går också lätt att ändra på både dagar och filmernas namn i koden.
+
+Dock så är min lösning beroende av att antal filmer, personer och olika tider på filmerna är tre stycken. 
+Så om detta skulle ändras behöver även koden uppdateras. Detta gäller även om länkarnas påbyggnads adress skulle ändras.
+
+
 ###Vad kan robots.txt spela för roll?
 
 I robots.txt talar du om för sökrobotar som besöker din sida, vart de är välkommna eller inte.
