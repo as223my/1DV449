@@ -3,7 +3,7 @@
 [Webbskrapa](http://anniesahlberg.se/Laboration1/)
 
 ###Finns det några etiska aspekter vid webbskrapning. Kan du hitta något rättsfall?
-Kolla alltid i terms of use innan du skrapar från en sida! Om informationen inte står där fråga ägaren till sidan om det är okej att skrapa. Tänk på att servern kan segas ner hos ägaren om för mkt skrapning sker från olika håll. (oändliga while loopar etc)
+Kolla alltid i terms of use innan du skrapar från en sida! Om informationen inte står där fråga ägaren till sidan om det är okej att skrapa. Tänk på att servern kan segas ner hos ägaren om för mkt skrapning sker från olika håll (oändliga while loopar etc).
 
 Ett av de första stora rättsfallen (2003) som involverar webb skrapning var American airlines som stämde företaget FareChase.
 FareChase använde sig av American Airlines webbsida för att skrapa information om dess priser för att använda vidare i sin tjänst som de sedan sålde för att jämföra olika priser på flygningar. FareChase överklagade domen (beslutet) och de båda företagen gjorde upp, och överklagningen lades därefter ner.
