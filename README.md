@@ -22,3 +22,7 @@ Givetvis ska man även kolla upp om det är okej att skrapa från webbsidan elle
 ###Begränsningar i din lösning- vad är generellt och vad är inte generellt i din kod?
 
 ###Vad kan robots.txt spela för roll?
+
+I robots.txt talar du om för sökrobotar som besöker din sida, vart de är välkommna eller inte.
+Om du inte har en robots.txt fil tillgänglig är risken stor att det då anses som rätt fram att skrapa allt. 
+
