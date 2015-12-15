@@ -1,0 +1,33 @@
+#container{
+	 width:1200px;
+	 margin: auto;
+	 border: 1px solid black;
+}
+
+#map{
+	height:500px;
+	width:500px;
+	margin-top:100px;
+}
+
+
+h1 {
+     text-align: center;
+}
+
+h2{
+	margin-left:5px;
+}
+
+.btn-default{
+	background-color: #D3EEFA;
+}
+
+.col-md-6{
+	border: 1px solid red;
+}
+
+#list{
+	margin-top: 20px;
+	border:1px solid blue;
+}
