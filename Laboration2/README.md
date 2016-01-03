@@ -89,3 +89,5 @@ Man vill ha https för att inte all information mellan klient och server ska ski
 [4] Johan Leitet, "Webbteknik 2 - HT - 13 - Webbsäkerhet" Linnéuniversitetet, November 2013 [Online] Tillgänglig:https://www.youtube.com/watch?v=Gc_pc9TMEIk  [Hämtad: 23 december, 2015]
 
 [5] S. Sounders, High Performance Web Sites. O’Reilly Media, 2007. [PDF]   
+
+###Av: Annie Sahlberg, as223my. 
