@@ -86,7 +86,7 @@ Man vill ha https för att inte all information mellan klient och server ska ski
 
 [3] "SQL Injection Prevention Cheat Sheet" Open Web Application Security Project, November 2015 [Online] Tillgänglig: https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet  [Hämtad: 22 december, 2015]
 
-[4] Johan Leitet, "Webbteknik 2 - HT - 13 - Webbsäkerhet" Linnéuniversitetet, November 2013 [Online] Tillgänglig:https://www.youtube.com/watch?v=Gc_pc9TMEIk  [Hämtad: 23 december, 2015]
+[4] Johan Leitet, "Webbteknik 2 -HT-13 - Webbsäkerhet" Linnéuniversitetet, November 2013 [Online] Tillgänglig:https://www.youtube.com/watch?v=Gc_pc9TMEIk  [Hämtad: 23 december, 2015]
 
 [5] S. Sounders, High Performance Web Sites. O’Reilly Media, 2007. [PDF]   
 
