@@ -1,6 +1,4 @@
-#Laboration 2 - säkerhet & prestanda
-###Av: Annie Sahlberg, as223my. 
-
+#Laboration 2 - säkerhet & prestanda (av: Annie Sahlberg, as223my)
 
 ##Säkerhetsproblem
 
