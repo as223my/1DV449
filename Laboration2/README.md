@@ -72,7 +72,7 @@ Istället för att använda sig av expiration header som går efter ett specifik
 ##Reflektion
 
 Denna laboration var väldigt nyttig för mig att genomföra, även om jag har fått kämpa då jag tyckte det var väldigt klurigt att veta vart jag skulle börja nysta i koden/applikationen och litteraturen. Jag har verkligen fått upp ögonen för hur lätt det är att missa viktiga detaljer som har med säkerheten i webbapplikationer att göra. 
-Då jag aldrig förut har kikat på en node.js applikation var detta också nytt och lite förvirrande men jag hoppas att jag inte har missat allt för mycket i min observation gällande prestanda och säkerhet.
+Då jag aldrig förut har kikat på en node.js applikation var detta också nytt och lite förvirrande, men jag hoppas att jag inte har missat allt för mycket i min observation gällande prestanda och säkerhet.
 
 Övriga tankar om själva applikationen är att man kanske kunde slå ihop lite css och javascript filer då det i nuläget blir ganska många http förfrågningar. 
 Jag var lite osäker på om jag skulle skriva med https i säkerhetsproblem i denna applikation. 
