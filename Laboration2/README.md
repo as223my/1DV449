@@ -6,7 +6,7 @@
 Vad jag kan se i koden så hashas/krypteras inte lösenorden alls. 
 Detta är en mycket stor säkerhetsrisk, för om någon obehörig skulle komma över lösenorden kan personen komma åt dina andra konton på tex google och facebook om samma lösenord skulle användas där.
 
-Det är därför väldigt viktigt att som privat person aldrig använda samma lösenord på olika webbsidor. En lösenordshanterare kan med fördel användas för att hålla i ordning på alla sina lösenord [1]. 
+Det är därför väldigt viktigt att som privatperson aldrig använda samma lösenord på olika webbsidor. En lösenordshanterare kan med fördel användas för att hålla i ordning på alla sina lösenord [1]. 
 
 För att skydda lösenorden är det viktigt att lösenorden saltas och hashas innan de sparas i databasen. Ett lösenord som är hashat ska aldrig gå att få tillbaks till klartext igen efteråt [1]. 
 
