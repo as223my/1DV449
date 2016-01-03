@@ -3,23 +3,23 @@
 ##Säkerhetsproblem
 
 ###Lösenord sparas i klartext
-Vad jag kan se i koden så hashas inte lösenorden alls. 
-Detta är en mycket stor säkerhetsrisk då om någon obehörig skulle komma över lösenorden kan komma åt andra vanliga konton som personer brukar ha så som tex google och facebook.
+Vad jag kan se i koden så hashas/krypteras inte lösenorden alls. 
+Detta är en mycket stor säkerhetsrisk, för om någon obehörig skulle komma över lösenorden kan personen komma åt dina andra konton på tex google och facebook om samma lösenord skulle användas där.
 
-Det är därför väldigt viktigt att som privat person aldrig använda samma lösenord på viktiga webbsidor. En lösenordshanterare kan med fördel användas för att hålla iordning på alla sina lösenord [1]. 
+Det är därför väldigt viktigt att som privat person aldrig använda samma lösenord på olika webbsidor. En lösenordshanterare kan med fördel användas för att hålla i ordning på alla sina lösenord [1]. 
 
-För att skydda lösenorden är det viktigt att lösenorden saltas och hashas innan det sparas i databasen. Ett lösenord som är hashat ska aldrig gå att få tillbaks till klartext igen efteråt [1]. 
+För att skydda lösenorden är det viktigt att lösenorden saltas och hashas innan de sparas i databasen. Ett lösenord som är hashat ska aldrig gå att få tillbaks till klartext igen efteråt [1]. 
 
 ###SQL injection
 
-Applikationen är sårbar för sql injection attacker i login.js då variablerna username och password inte separeras från sql frågan. Vilket gör det möjligt att skicka in skadlig kod, tex kan det vara möjligt att komma åt innehåll från användarkonto genom att skicka in id parameter  ' or '1'='1 [2, s.7]. 
+Applikationen är sårbar för sql injection attacker i login.js då variablerna username och password inte separeras från sql frågan. Vilket gör det möjligt att skicka in skadlig kod, tex kan det vara möjligt att komma åt innehåll från ett användarkonto genom att skicka in id parameter ' or '1'='1 [2, s.7]. 
 
 För att förhindra detta kan man tex använda sig av prepared statements [3]. 
 Ett annat alternativ är att använda sig av ett säkert API [2, s.7], som hanterar inloggningen tex, google oauth.  
 
 ###XSS (Cross-Site Scripting) 
 
-Applikationen är sårbar för xss attacker. Brist på validering av indata i MessageBoard.js gör att en hackare kan få en ett script på sidan som tex läser av användarens session cookie [2, s.9].
+Applikationen är sårbar för XSS attacker. Brist på validering av indata i MessageBoard.js gör att en hackare kan få in ett script på sidan som tex läser av användarens session cookie [2, s.9].
 XSS attacker kan förebyggas med hjälp av ordentlig validering av indata, man ser till så att ingen html/javascript/css tags kan skickas med helt enkelt.
 
 Man kan också ta hjälp av en så kallad “whitelist” där man listar alla godkända tecken som får skickas in i applikationen [2, s.9]. 
@@ -36,7 +36,7 @@ För att undvika CSRF attacker skicka med ett unikt token i ett gömt fält [2, 
 
 ###Åtkomst till /message
 
-Även som utloggad ur applikationen kommer man åt /message. Man kan dock inte skriva några meddelande men har åtkomst till innehållet. Detta leder till att vem som helst har tillgång till de skrivna meddelandena och dessa inte alls är något privat mellan de inloggade användarna. För att åtgärda detta krävs “authorization” kontroll av sidans användare, så att de som inte ska ha tillträde till konversationen utestängs [2, s.13]. 
+Även som utloggad ur applikationen kommer man åt /message. Man kan dock inte skriva några meddelande men har åtkomst till innehållet. Detta leder till att vem som helst har tillgång till de skrivna meddelandena och att dessa därför inte alls blir något privat mellan de inloggade användarna. För att åtgärda detta krävs “authorization” kontroll av sidans användare, så att de som inte ska ha tillträde till konversationen utestängs [2, s.13]. 
 
 ##Prestandaproblem
 
@@ -54,7 +54,7 @@ Men i verkligheten leder ofta denna placering av kod till motsatsen, dvs långsa
 
 ###Förminskning av javascript och css filer 
 
-För att öka prestandan för applikationen så kan javascript och css filerna förminskas (minifying). När man förminskar en javascript fil så tas alla kommentarer och onödiga blanksteg bort. Detta leder till att filens storlek blir mindre och går snabbare att läsa in i koden [5, s.69]. 
+För att öka prestandan för applikationen så kan javascript och css filerna förminskas (minifying). När man förminskar en javascript fil så tas alla kommentarer och onödiga blanksteg bort. Detta leder till att filens storlek blir mindre och det går snabbare att läsa in i koden [5, s.69]. 
 
 Det är ofta inte lika viktigt för prestandan att förminska css filerna som javascript filerna. Detta beror på att css koden generellt brukar innehålla färre kommentarer och blanksteg än javascript koden. Det man kan tänka på med css koden är att använda så få tecken så möjligt, tex istället för att skriva “0px” så kan man bara skriva “0” då detta tolkas på samma sätt [5, s.75]. 
 
@@ -75,7 +75,7 @@ Denna laboration var väldigt nyttig för mig att genomföra, även om jag har f
 Då jag aldrig förut har kikat på en node.js applikation var detta också nytt och lite förvirrande, men jag hoppas att jag inte har missat allt för mycket i min observation gällande prestanda och säkerhet.
 
 Övriga tankar om själva applikationen är att man kanske kunde slå ihop lite css och javascript filer då det i nuläget blir ganska många http förfrågningar. 
-Jag var lite osäker på om jag skulle skriva med https i säkerhetsproblem i denna applikation. 
+Jag var lite osäker på om jag skulle skriva med https som säkerhetsproblem i denna applikation. 
 Man vill ha https för att inte all information mellan klient och server ska skickas okrypterad.
 
 ##Referenser
