@@ -26,7 +26,7 @@ class HTMLView{
 			<body>
 				<div class='container-fluid' id='container'>$content</div>
 				
-				<script src='https://maps.googleapis.com/maps/api/js?key=[key]&callback=initMap'
+				<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBUUC0qK1fi9rmOeb9zHEF-Jb_LpQbrqQ0'
         		async defer></script>
         		<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         		<script src='./javascript/mashup.js'></script>

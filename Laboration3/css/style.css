@@ -1,7 +1,6 @@
 #container{
 	 width:1200px;
 	 margin: auto;
-	 border: 1px solid black;
 }
 
 #map{
@@ -22,11 +21,6 @@ h2{
 	background-color: #D3EEFA;
 }
 
-.col-md-6{
-	border: 1px solid red;
-}
-
 #list{
 	margin-top: 20px;
-	border:1px solid blue;
 }
