@@ -27,6 +27,17 @@ var maps = {
                 url: './src/model/sr.json', 
                 dataType:'json',
                 success: function (result) { 
+                    for (var i=0; i < result.messages.length; i++){ 
+                        var split1 = result.messages[i].createddate.split("(");
+                        var split2 = split1[1].split("+");
+                        var date = split2[0];  
+                        result.messages[i].createddate = date; 
+                    }  
+
+                    result.messages.sort(function(y, x){
+                        return x.createddate - y.createddate;
+                    });
+
                     for(var i=0; i < result.messages.length; i++){
                         if(result.messages[i].category == 0){
                             roadTraffic.push(result.messages[i]);
@@ -37,9 +48,8 @@ var maps = {
                         }else if(result.messages[i].category == 3){
                             other.push(result.messages[i]);
                         }
-
                         allCategories.push(result.messages[i]);
-                    } 
+                    }
                 }
             });
 
@@ -64,6 +74,7 @@ var maps = {
         });
     },
 
+    // Sortera på datum här någonstans
     markerAndListHandler:function(category){
         maps.deleteMarker();
         $("#list ul li").remove();
@@ -79,12 +90,10 @@ var maps = {
              var content = $(this).text();
 
             for(var i=0; i < maps.markers.length; i++){
-                    if(maps.markers[i].title == content){
-                        google.maps.event.trigger(maps.markers[i], "click");
-                    }
-                
-            } 
-             
+                if(maps.markers[i].title == content){
+                    google.maps.event.trigger(maps.markers[i], "click");
+                }  
+            }   
         });
     },
 
@@ -106,7 +115,14 @@ var maps = {
     },
 
     clickWindow:function(content, marker, infowindow){
-        var contentString = '<h3>' + content.title + '</h3> <ul><li> datum: </li><li>kategori: ' + content.category + '</li></ul><p>' + content.description + '</p>'; 
+        var date = new Date(parseInt(content.createddate));
+        var split = date.toString().split(" ", 5);
+        var dateString = split[2] + ' ' + split[1] + ' ' + split[3] + ', ' + split[4]; 
+
+        var categories = ["vägtrafik", "kollektivtrafik", "planerad störning", "övrigt", "alla kategorier"]; 
+        var chooseCategorie = categories[content.category]; 
+        
+        var contentString = '<h3>' + content.title + '</h3> <ul><li> Datum: ' + dateString + ' </li><li>Kategori: ' + chooseCategorie + '</li></ul><p>' + content.description + '</p>'; 
         google.maps.event.addListener(marker, 'click', function() {
             maps.map.setZoom(8);
             maps.map.setCenter(marker.getPosition());
