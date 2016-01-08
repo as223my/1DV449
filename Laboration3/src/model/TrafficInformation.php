@@ -2,39 +2,46 @@
 
 class TrafficInformation{
 
-	private $url;  
+	private $url; 
+	private $filepathTime;
+	private $filepathJson; 
 
 	public function __construct(){
-
 		$this->url = "http://api.sr.se/api/v2/traffic/messages?format=json&pagination=false";  
+		$this->filepathTime = "src/model/time.txt";
+		$this->filepathJson = "src/model/sr.json";
 	}
 
 	public function getTrafficInformation(){
+		$data = ""; 
 
-		$timefile = fopen("src/model/time.txt", "r+") or die("Unable to open file!");
-		$time =  fread($timefile,filesize("src/model/time.txt")); 
+		$timefile = fopen($this->filepathTime, "r+") or die("Unable to open file!");
+		$time =  fread($timefile,filesize($this->filepathTime)); 
 		fclose($timefile);
 
 		if(($time + 300) < time()){
-			$timefile = fopen("src/model/time.txt", "w+") or die("Unable to open file!");
+			$timefile = fopen($this->filepathTime, "w+") or die("Unable to open file!");
 			fwrite($timefile, time());
 			fclose($timefile); 
 
-			$data = $this->getData($this->url); 	
-		//	var_dump(json_decode($data, true));  die(); 
+			$data = $this->getData($this->url); 
 
-			$jsonfile = fopen("src/model/sr.json", "w+") or die("Unable to open file!");
+			$jsonfile = fopen($this->filepathJson, "w+") or die("Unable to open file!");
 			fwrite($jsonfile, $data);
 			fclose($jsonfile);
 		}
+
+		if($data !== false && filesize($this->filepathJson) == 0){
+			$data = false; 
+		}
+
+		return $data; 
 	}
 
  // curl snabbare än get_file_contents
 	public function getData($url){
 		header('Content-Type:text/html; charset=utf-8');
-
 		$ch = curl_init(); 
-
 		curl_setopt($ch, CURLOPT_URL , $url); 
 	
 		// talar om att det vi hämtar hem inte ska skrivas ut direkt.
@@ -42,10 +49,9 @@ class TrafficInformation{
 	
 		// identifierar mig. 
 		curl_setopt($ch, CURLOPT_USERAGENT,"as223my"); 
-	
 		$data = curl_exec($ch);
 		curl_close($ch); 
 		
 		return $data;
-		}
+	}
 }

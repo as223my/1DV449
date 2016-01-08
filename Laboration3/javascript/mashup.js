@@ -9,7 +9,6 @@ var maps = {
     zoom : 5,
       
     init:function(e){
-       // var markers = []; 
 
         var roadTraffic = [];
         var publicTransport = [];
@@ -74,7 +73,6 @@ var maps = {
         });
     },
 
-    // Sortera på datum här någonstans
     markerAndListHandler:function(category){
         maps.deleteMarker();
         $("#list ul li").remove();
@@ -124,7 +122,7 @@ var maps = {
         
         var contentString = '<h3>' + content.title + '</h3> <ul><li> Datum: ' + dateString + ' </li><li>Kategori: ' + chooseCategorie + '</li></ul><p>' + content.description + '</p>'; 
         google.maps.event.addListener(marker, 'click', function() {
-            maps.map.setZoom(8);
+            maps.map.setZoom(9);
             maps.map.setCenter(marker.getPosition());
             infowindow.setContent(contentString);
             infowindow.open(maps.map, marker);
@@ -136,10 +134,7 @@ var maps = {
                 maps.markers[i].setMap(null); 
         } 
         maps.markers = []; 
-    }, 
-
-
-       
+    },       
 };
     
 window.onload = maps.init;

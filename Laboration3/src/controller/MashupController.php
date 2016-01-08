@@ -9,15 +9,17 @@ class MashupController{
 	private $mashupView; 
 
 	public function __construct(){
-
 		$this->trafficInformation = new \TrafficInformation();
 		$this->mashupView = new \MashupView();
 	}
 
 	public function srTrafficInformation(){
+		$data = $this->trafficInformation->getTrafficInformation();
 
-		$this->trafficInformation->getTrafficInformation();
-		return $this->mashupView->content(); 
+		if($data === false){
+			return $this->mashupView->content("Trafikinformation kunde tyvärr inte hämtas för tillfället"); 
+		}else{
+			return $this->mashupView->content(""); 
+		} 
 	} 
-
 }
