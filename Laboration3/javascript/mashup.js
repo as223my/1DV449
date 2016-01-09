@@ -21,6 +21,7 @@ var maps = {
             zoom: maps.zoom
         });
 
+        // Hämtar och sorterar innehållet från sr-api (sparat i json fil). 
         $.ajax({ 
                 type: 'GET', 
                 url: './src/model/sr.json', 
@@ -33,6 +34,7 @@ var maps = {
                         result.messages[i].createddate = date; 
                     }  
 
+                    //sorterar på datum. 
                     result.messages.sort(function(y, x){
                         return x.createddate - y.createddate;
                     });
@@ -52,6 +54,7 @@ var maps = {
                 }
             });
 
+        // Styr vad som händer vid val av kategori att visa. 
         $("#roadTraffic").click(function(){
              maps.markerAndListHandler(roadTraffic); 
         });
@@ -73,6 +76,8 @@ var maps = {
         });
     },
 
+    /* Lägger till markörer över händelser på kartan med tillhörande infowindow, 
+    skapar också en lista över händelser som är kopplade till markörerna. */  
     markerAndListHandler:function(category){
         maps.deleteMarker();
         $("#list ul li").remove();

@@ -12,6 +12,7 @@ class TrafficInformation{
 		$this->filepathJson = "src/model/sr.json";
 	}
 
+	/*  Hämtar ny data från sr om mer en 5 minuter gått sedan sista cachningen, och sparar ner detta i en fil. */
 	public function getTrafficInformation(){
 		$data = ""; 
 
@@ -38,7 +39,7 @@ class TrafficInformation{
 		return $data; 
 	}
 
- // curl snabbare än get_file_contents
+	// Hämtar data från sr api. 
 	public function getData($url){
 		header('Content-Type:text/html; charset=utf-8');
 		$ch = curl_init(); 
