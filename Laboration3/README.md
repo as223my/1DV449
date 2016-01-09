@@ -21,3 +21,4 @@ Min applikation är också känslig för om namn eller siffror skulle ändra bet
 Applikationen saknar input fält, och känslig information i form av tex inloggning (databas). Vilket gör att applikationen inte är öppen för  attacker så som xss, sql-injections, csrf. 
 
 ###Hur har du tänkt kring optimeringen i din applikation?
+För att öka prestandan cachar jag information från sverige radios api. Jag har placerat min javascript fil i botten av body tagen i mitt dokument såväl som css är placerat i headern. Jag har även minifierat min javascript fil.  
