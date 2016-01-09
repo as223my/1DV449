@@ -18,5 +18,6 @@ Min applikation är helt beroende av att apierna fungerar som de skall, jag har 
 Min applikation är också känslig för om namn eller siffror skulle ändra betydelse i datat från sveriges radios api. 
 
 ###Hur har du tänkt kring säkerheten i din applikation?
+Applikationen saknar input fält, och känslig information i form av tex inloggning (databas). Vilket gör att applikationen inte är öppen för  attacker så som xxs, sql-injections, csrf. 
 
 ###Hur har du tänkt kring optimeringen i din applikation?
