@@ -1,1 +1,3 @@
-Länk till applikation: https://anniesahlberg.se/Laboration3/
+Länk till mashup-applikationen: https://anniesahlberg.se/Laboration3/
+
+#Reflektionsfrågor
