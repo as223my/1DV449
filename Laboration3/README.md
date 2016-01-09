@@ -10,6 +10,7 @@ För att använda sig av google maps javascript api behöver man en webbläsar n
 Det är gratis att använda sig av api:et så länge man inte överskrider 25000 uppladdningar av kartor under 24 timmar, 90 dagar i sträck. 
 
 ###Hur och hur länga cachar du ditt data för att slippa anropa API:erna i onödan?
+Jag cachar trafikinformationen från Sveriges radio i 5min på serven, datan sparas i en fil. Detta för att inte belasta api:et, samtidigt ville jag inte vänta längre mellan cachningarna då viktig trafikinformation kan undgå användaren. 
 
 ###Vad finns det för risker kring säkerhet och stabilitet i din applikation?
 
