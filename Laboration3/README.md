@@ -24,7 +24,7 @@ Applikationen saknar input fält, och känslig information i form av tex inloggn
 För att öka prestandan cachar jag information från sveriges radio api. Jag har placerat min javascript fil i botten av body tagen i mitt dokument såväl som css är placerat i headern. Jag har även minifierat min javascript fil.  
 
 #HTTP/2
-För att förhindra att det blir blockeringar när “för många” http förfrågningar görs började man arbeta fram det som nu kallas HTTP/2.
+För att förhindra att det blir blockeringar när för många http förfrågningar skickas började man arbeta fram det som nu kallas HTTP/2 (baserat på spdy projektet).
 
 HTTP/2 stödjer fortfarande samma metoder, headers, statuskoder etc som HTTP 1.1 vilket gör att applikationer med HTTP 1.1 fortfarande kommer fungera som vanligt. Det som bland annat gör att HTTP/2 blir snabbare att använda är att det inte blir någon blockering av för många förfrågningar detta tack vare att transporten mellan klient och server delas upp i små namngivna delar, så kallade frames som sedan sätts ihop igen vid ankomst.
 
