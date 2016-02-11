@@ -26,6 +26,6 @@ För att öka prestandan cachar jag information från sveriges radio api. Jag ha
 #HTTP/2
 För att förhindra att det uppstår blockeringar när för många http förfrågningar skickas samtidigt började man arbeta fram det som nu kallas HTTP/2 (baserat på spdy projektet).
 
-HTTP/2 stödjer fortfarande samma metoder, headers, statuskoder etc som HTTP 1.1 vilket gör att applikationer med HTTP 1.1 fortfarande kommer fungera som vanligt. Det som bland annat gör att HTTP/2 blir snabbare att använda är att det inte blir någon blockering av för många förfrågningar detta tack vare att transporten mellan klient och server delas upp i små namngivna delar, så kallade frames som sedan sätts ihop igen vid ankomst.
+HTTP/2 har fortfarande samma metoder, headers, statuskoder etc som HTTP 1.1 vilket gör att applikationer med HTTP 1.1 fortfarande kommer kunna fungera som vanligt. Det som bland annat gör att HTTP/2 blir snabbare att använda är att det inte blir någon blockering av för många förfrågningar detta tack vare att transporten mellan klient och server delas upp i små namngivna delar, så kallade frames som sedan sätts ihop igen vid ankomst.
 
-Detta kallas multiplexing, andra fördelar är också att headers kan komprimeras och att filer kan skickas till webbläsaren innan en förfrågan skickas.
+Detta kallas multiplexing, andra fördelar är också att headers kan komprimeras och att filer kan skickas till webbläsaren innan en förfrågan skickas (server push).
